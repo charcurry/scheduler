@@ -30,10 +30,12 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     };
-    return axios.put(`http://localhost:8001/api/appointments/${id}`, {interview}).then(() => setState({
+    return axios.put(`http://localhost:8001/api/appointments/${id}`, {interview}).then(() => 
+    setState({
       ...state,
      appointments
-    }))
+    })
+    )
   }
 
   function cancelInterview(id) {
