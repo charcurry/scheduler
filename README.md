@@ -1,5 +1,13 @@
 # Interview Scheduler
 
+Interview Scheduler is an app that can be used to manange appointments for interviews!
+
+Hourly interviews can be scheduled for any interviewer that is available for each day in the week.
+
+Users are able to create, cancel, delete and edit appointments with ease with a clean UI.
+
+![Application with Interviews booked](docs\Application.png)
+
 ## Setup
 
 Install dependencies with `npm install`.
