@@ -56,7 +56,7 @@ export default function Appointment(props) {
   return (
     <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
-      {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />};
+      {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === SHOW && (
         <Show
           student={props.interview.student}
@@ -64,14 +64,14 @@ export default function Appointment(props) {
           onDelete={() => transition(CONFIRM)}
           onEdit={() => transition(EDIT)}
         />
-      )};
-      {mode === CREATE && <Form interviewers={props.interviewers} onSave={save} onCancel={() => back()} />};
-      {mode === SAVING && <Status message={"Saving"} />};
-      {mode === DELETING && <Status message={"Deleting"} />};
-      {mode === CONFIRM && <Confirm message={"Are you sure you would like to delete?"} onCancel={() => back()} onConfirm={destroy} />};
-      {mode === EDIT && <Form interviewers={props.interviewers} interviewer={props.interview.interviewer.id} student={props.interview.student} onSave={save} onCancel={() => back()} />};
-      {mode === ERROR_DELETE && <Error onClose={() => back()} message={"Could not cancel appointment"} />};
-      {mode === ERROR_SAVE && <Error onClose={() => back()} message={"Could not make appointment"} />};
+      )}
+      {mode === CREATE && <Form interviewers={props.interviewers} onSave={save} onCancel={() => back()} />}
+      {mode === SAVING && <Status message={"Saving"} />}
+      {mode === DELETING && <Status message={"Deleting"} />}
+      {mode === CONFIRM && <Confirm message={"Are you sure you would like to delete?"} onCancel={() => back()} onConfirm={destroy} />}
+      {mode === EDIT && <Form interviewers={props.interviewers} interviewer={props.interview.interviewer.id} student={props.interview.student} onSave={save} onCancel={() => back()} />}
+      {mode === ERROR_DELETE && <Error onClose={() => back()} message={"Could not cancel appointment"} />}
+      {mode === ERROR_SAVE && <Error onClose={() => back()} message={"Could not make appointment"} />}
     </article>
   );
-};
+}

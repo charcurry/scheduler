@@ -41,24 +41,13 @@ export default function useApplicationData() {
 
   // updates the spots for every day
   function updateSpots(weekday, days, appointments, id, variable) {
-    if (variable === "REMOVE_SPOTS") {
-      const updateDaysArray = days.map(day => {
-        return {
-          ...day,
-          spots: spotUpdate(weekday, day, variable, id, appointments)
-        }
-      })
-      return updateDaysArray
-    }
-    if (variable === "ADD_SPOTS") {
-      const updateDaysArray = days.map(day => {
-        return {
-          ...day,
-          spots: spotUpdate(weekday, day, variable, id, appointments)
-        }
-      })
-      return updateDaysArray
-    }
+    const updateDaysArray = days.map(day => {
+      return {
+        ...day,
+        spots: spotUpdate(weekday, day, variable, id, appointments)
+      }
+    })
+    return updateDaysArray
   }
 
   // books an interview with a given appointment id and interview object
@@ -78,10 +67,10 @@ export default function useApplicationData() {
         ...state,
         appointments,
         days: spotUpdate
-      })
+      });
     }
-    )
-  }
+    );
+  };
 
   // cancels an interview with a given appointment id
   function cancelInterview(id) {
@@ -100,11 +89,11 @@ export default function useApplicationData() {
         ...state,
         appointments,
         days: spotUpdate
-      })
+      });
     }
 
-    )
-  }
+    );
+  };
 
   return { state, setDay, bookInterview, cancelInterview }
 }
