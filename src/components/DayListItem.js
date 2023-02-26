@@ -3,6 +3,7 @@ import React from "react";
 import "components/DayListItem.scss";
 import classNames from "classnames";
 
+// the DayListItem function takes each day and displays the amount of spots remaining as well as the selected day
 export default function DayListItem(props) {
   const formatSpots = (spots) => {
     if (spots === 0) {

@@ -1,6 +1,6 @@
 import React from "react";
 
-
+// the header displays above each appointment and shows what time the appointment is 
 export default function Header(props) {
 
   return (

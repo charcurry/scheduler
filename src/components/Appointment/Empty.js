@@ -1,5 +1,6 @@
 import React from "react";
 
+// the empty card that shows when there is no appointment booked in a timeslot
 export default function Empty(props) {
 
   return (

@@ -1,3 +1,4 @@
+// the getAppointmentsForDay function retrieves each appointment for the selected day and returns them in the form of an array
 export function getAppointmentsForDay(state, day) {
   const appointments = []
   for (let aDay of state.days) {
@@ -10,6 +11,7 @@ export function getAppointmentsForDay(state, day) {
   return appointments
 }
 
+// the getInterview function retrieves the interview object for the selected appointment and returns it in the form of an object
 export function getInterview(state, interview) {
   const Interview = {}
   if (interview === null) {
@@ -20,6 +22,7 @@ export function getInterview(state, interview) {
   return Interview
 }
 
+// the getInterviewersForDay function retrieves each interviewer for the selected day and returns them in the form of an array
 export function getInterviewersForDay(state, day) {
   const interviewers = []
   for (let aDay of state.days) {

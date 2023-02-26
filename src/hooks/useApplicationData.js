@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+// the useApplicationData function deals with all of the logic to do with the Application component
 export default function useApplicationData() {
   const [state, setState] = useState({
     day: "Monday",
@@ -9,8 +10,10 @@ export default function useApplicationData() {
     interviewers: {}
   });
 
+  // sets the day in the state
   const setDay = day => setState({ ...state, day });
 
+  // axios.gets each api component and sets the state with the information gathered from them
   useEffect(() => {
     Promise.all([
       axios.get('http://localhost:8001/api/days'),
@@ -21,6 +24,7 @@ export default function useApplicationData() {
     })
   }, [])
 
+  // updates the spot for one day
   function spotUpdate(weekday, day, variable, id, appointment) {
     let spots = day.spots
     if (weekday === day.name && variable === "REMOVE_SPOTS" && appointment[id].interview === null) {
@@ -35,6 +39,7 @@ export default function useApplicationData() {
     return spots
   }
 
+  // updates the spots for every day
   function updateSpots(weekday, days, appointments, id, variable) {
     if (variable === "REMOVE_SPOTS") {
       const updateDaysArray = days.map(day => {
@@ -56,7 +61,7 @@ export default function useApplicationData() {
     }
   }
 
-
+  // books an interview with a given appointment id and interview object
   function bookInterview(id, interview) {
     const appointment = {
       ...state.appointments[id],
@@ -78,6 +83,7 @@ export default function useApplicationData() {
     )
   }
 
+  // cancels an interview with a given appointment id
   function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],

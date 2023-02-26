@@ -6,6 +6,7 @@ import DayList from "./DayList";
 import Appointment from "./Appointment";
 import { getAppointmentsForDay, getInterviewersForDay, getInterview } from "helpers/selectors";
 
+// the Application function deals with displaying the correct appointments and interviewers for each day in the app
 export default function Application(props) {
   const {
     state,

@@ -1,5 +1,6 @@
 import React from "react";
 
+// the show card shows the appointment that is booked with the student and interviewer name
 export default function Show(props) {
 
   return (

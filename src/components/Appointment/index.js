@@ -9,6 +9,7 @@ import Status from './Status';
 import Confirm from './Confirm';
 import Error from './Error';
 
+// the Appointment function that deals with the logic in displaying the correct state of the appointment.
 export default function Appointment(props) {
 
   const EMPTY = "EMPTY";
@@ -21,10 +22,12 @@ export default function Appointment(props) {
   const ERROR_SAVE = "ERROR_SAVE";
   const ERROR_DELETE = "ERROR_DELETE";
 
+  // displays the show card if there is an interview and empty if there is not
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
-
+  
+  // saves the appointment and transitions to the status card, then to the show or error card.
   function save(name, interviewer) {
     const interview = {
       student: name,
@@ -39,6 +42,7 @@ export default function Appointment(props) {
       .catch(error => transition(ERROR_SAVE, true));
   };
 
+  // cancels the appointment and transitions to the status card, then to the empty or error card.
   function destroy() {
 
     transition(DELETING, true);

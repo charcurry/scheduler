@@ -1,5 +1,6 @@
 import React from "react";
 
+// the error card that shows when there is an error with creating or deleting an appointment
 export default function Error(props) {
 
   return (

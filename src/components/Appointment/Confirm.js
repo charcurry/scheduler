@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "components/Button";
 
+// the confirm card that shows when the user is trying to delete an appointment
 export default function Confirm(props) {
 
   return (

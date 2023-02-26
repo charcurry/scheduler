@@ -1,5 +1,6 @@
 import React from "react";
 
+// the status card displays the status message when saving or deleting an interview
 export default function Status(props) {
 
   return (

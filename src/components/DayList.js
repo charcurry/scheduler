@@ -1,6 +1,7 @@
 import React from "react";
 import DayListItem from "./DayListItem";
 
+// the DayList function displays each day on the side-bar and all logic to do with that
 export default function DayList(props) {
   const days = props.days.map(day => {
     return (

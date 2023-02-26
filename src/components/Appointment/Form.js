@@ -2,22 +2,26 @@ import React, { useState } from 'react';
 import Button from "components/Button";
 import InterviewerList from "components/InterviewerList";
 
+// the form card that shows when the user is in the process of booking an appointment
 export default function Form(props) {
 
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
   const [error, setError] = useState("");
 
+  // resets the student and interviewer 
   const reset = () => {
     setStudent("");
     setInterviewer(null);
   };
 
+  // cancels the in-progress appointment
   const cancel = () => {
     reset();
     props.onCancel();
   };
 
+  // shows errors if the user does not input a student or interviewer
   function validate() {
     if (student === "") {
       setError("Student name cannot be blank");
