@@ -6,7 +6,7 @@ Hourly interviews can be scheduled for any interviewer that is available for eac
 
 Users are able to create, cancel, delete and edit appointments with ease with a clean UI.
 
-![Application with Interviews booked](docs\Application.png)
+![Application with Interviews booked](D:\lighthouse\scheduler\docs\Application.png)
 
 ## Setup
 
