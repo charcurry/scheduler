@@ -1,6 +1,6 @@
 # Interview Scheduler
 
-Interview Scheduler is an app that can be used to manange appointments for interviews!
+Interview Scheduler is an app that can be used to manage appointments for interviews!
 
 Hourly interviews can be scheduled for any interviewer that is available for each day in the week.
 
